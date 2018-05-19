@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, except: %i[index new]
+  before_action :set_task, except: %i[index new create]
 
   # GET /tasks
   # GET /tasks.json
@@ -24,7 +24,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = current_user.build_tasks(task_params)
+    @task = current_user.tasks.build(task_params)
 
     respond_to do |format|
       if @task.save

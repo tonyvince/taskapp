@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Create a rails application with mysql or psql database
 
-Things you may want to cover:
+- The application has two models: User and Tasks
 
-* Ruby version
+- Each User has the columns which he needs to log in (Mail, PasswordHash, ...)
 
-* System dependencies
+- Each Task has an Start, End and Description
 
-* Configuration
+- Each User can have multiple Tasks but every Task is assigned to a single User
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Model validations that make sure that each Task has a Description present and Start is before the End
+- User validations that make sure Mail Address is valid and Password present
+- Add tests for these models
+- Add controller tests
